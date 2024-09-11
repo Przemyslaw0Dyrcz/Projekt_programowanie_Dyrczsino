@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dyrczsino.Views.Roulette">
+
+    <Grid Padding="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="80" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="50" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="50" />
+            <!-- Dodano nowy wiersz na dolny przycisk -->
+        </Grid.RowDefinitions>
+
+        <Label x:Name="ResultLabel" Text="" HorizontalOptions="Center" FontSize="26" FontAttributes="Bold" TextColor="Gold" Grid.Row="0"/>
+
+        <Grid Grid.Row="1">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="5">
+                <Frame x:Name="Square1" WidthRequest="50" HeightRequest="50" BackgroundColor="Gray" BorderColor="Black" />
+                <Frame x:Name="Square2" WidthRequest="50" HeightRequest="50" BackgroundColor="Gray" BorderColor="Black" />
+                <Frame x:Name="Square3" WidthRequest="50" HeightRequest="50" BackgroundColor="Gray" BorderColor="Black" />
+                <Frame x:Name="Square4" WidthRequest="50" HeightRequest="50" BackgroundColor="Gray" BorderColor="Black" />
+                <Frame x:Name="Square5" WidthRequest="50" HeightRequest="50" BackgroundColor="Gray" BorderColor="Black" />
+            </StackLayout>
+            <BoxView Color="Black" HeightRequest="30" WidthRequest="5" HorizontalOptions="Center" VerticalOptions="End" Margin="0, 0, 0, -10"/>
+        </Grid>
+
+        <StackLayout Spacing="20" Orientation="Horizontal" HorizontalOptions="Center" Grid.Row="3">
+            <Button Text="-" Clicked="DecreaseStake_Clicked" HorizontalOptions="Center" />
+            <Label x:Name="StakeLabel" Text="1" HorizontalOptions="Center" FontSize="35" TextColor="Gold" />
+            <Button Text="+" Clicked="IncreaseStake_Clicked" HorizontalOptions="Center" />
+        </StackLayout>
+
+        <Label x:Name="Kolor" Text="Wybierz kolor" HorizontalOptions="Center" FontSize="26" FontAttributes="Bold" TextColor="Black" Grid.Row="5"/>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Grid.Row="6">
+            <Button x:Name="RedButton" Text="" Clicked="OnColorSelected" BackgroundColor="Red" BorderColor="Transparent" BorderWidth="2" />
+            <Button x:Name="BlackButton" Text="" Clicked="OnColorSelected" BackgroundColor="Black" TextColor="White" BorderColor="Transparent" BorderWidth="2" />
+            <Button x:Name="GreenButton" Text="" Clicked="OnColorSelected" BackgroundColor="Green" BorderColor="Transparent" BorderWidth="2" />
+        </StackLayout>
+
+        <ScrollView x:Name="GameRulesScrollView"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Fill" 
+                    HeightRequest="150"
+                    IsVisible="False"
+                    Margin="0,30,0,0"
+                    Grid.Row="8">
+            <StackLayout>
+                <Label x:Name="GameRule1"
+                       Text="Wybór Koloru: Na ekranie znajdują się trzy przyciski: Czerwony, Czarny i Zielony. Wybierz jeden z kolorów, klikając odpowiedni przycisk. Wybrany kolor zostanie podświetlony złotą ramką."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"/>
+                <Label x:Name="GameRule2"
+                       Text="Ustawienie Stawki: Możesz dostosować stawkę, klikając przyciski + lub - obok etykiety stawki. Stawka początkowa wynosi 1."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                <Label x:Name="GameRule3"
+                       Text="Rozpoczęcie Gry: Kliknij przycisk Graj, aby rozpocząć grę. Ruletka zacznie animację, wyświetlając zmieniające się kolory w pięciu kwadratach."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                <Label x:Name="GameRule4"
+                       Text="Przebieg Gry: Animacja trwa do momentu, aż wylosowany kolor pojawi się w trzecim kwadracie. Kolory w kwadratkach zmieniają się co pół sekundy."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                <Label x:Name="GameRule5" 
+                       Text="Wynik Gry: Po zakończeniu animacji, na ekranie pojawi się wynik. Jeśli wylosowany kolor zgadza się z wybranym kolorem, wygrywasz. Wygrana jest mnożona przez 2 (dla kolorów Czerwony i Czarny) lub 8 (dla koloru Zielony). Jeśli kolor się nie zgadza, przegrywasz."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                <Label x:Name="GameRule6"
+                       Text="Wyświetlanie Wyniku: Wynik wyświetlany jest na etykiecie i zawiera informacje o wylosowanym kolorze oraz o wysokości wygranej lub przegranej."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+            </StackLayout>
+        </ScrollView>
+
+        <Button x:Name="NextButton"
+                Text="Next"
+                Clicked="OnNextButtonClicked"
+                BackgroundColor="Orange"
+                TextColor="White"
+                WidthRequest="100"
+                HeightRequest="50"
+                IsVisible="False"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand" 
+                Margin="0,20,0,0"
+                Grid.Row="9"/>
+
+
+            <Button Text="Graj" Clicked="PlayRoulette" HorizontalOptions="Center" Grid.Row="7"/>
+
+            <Button x:Name="QuestionMarkButton"
+                Text="?"
+                FontSize="28"
+                BackgroundColor="White"
+                TextColor="Black"
+                WidthRequest="60"
+                HeightRequest="60"
+                CornerRadius="30"
+                Clicked="OnQuestionMarkClicked"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Margin="0,30,0,0"
+                Grid.Row="8" />
+
+    </Grid>
+</ContentView>

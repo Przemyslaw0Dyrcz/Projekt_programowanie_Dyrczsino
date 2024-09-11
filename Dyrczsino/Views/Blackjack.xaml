@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dyrczsino.Views.Blackjack">
+
+    <Grid>
+
+        <BoxView Color="Purple" />
+
+
+
+        <StackLayout Padding="10" Spacing="20" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand">
+            <Label Text="Blackjack" FontSize="24" HorizontalOptions="Center" />
+            <Label Text="Your Points:" FontSize="18" HorizontalOptions="Center" />
+            <Label x:Name="PlayerPointsLabel" Text="0" FontSize="18" HorizontalOptions="Center" TextColor="Black" />
+            <Label Text="Croupier Points: " FontSize="18" HorizontalOptions="Center" />
+            <Label x:Name="CroupierPointsLabel" Text="0" FontSize="18" HorizontalOptions="Center" TextColor="Black" />
+            <Label Text="Croupier:" FontSize="18" HorizontalOptions="Center" />
+            <Grid x:Name="CroupierGrid" ColumnSpacing="5" HorizontalOptions="Center">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+
+            <BoxView HeightRequest="2" Color="Black" />
+
+            <Label Text="You:" FontSize="18" HorizontalOptions="Center" />
+            <Grid x:Name="PlayerGrid" ColumnSpacing="5" HorizontalOptions="Center">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+            </Grid>
+
+            <StackLayout Orientation="Horizontal" Spacing="20" HorizontalOptions="Center">
+                <Button x:Name="HitButton" Text="Hit" Clicked="OnHitButtonClicked" />
+                <Button Text="Stand" Clicked="OnStandButtonClicked" />
+                <Button Text="Restart" Clicked="OnRestartButtonClicked" />
+            </StackLayout>
+
+            <ScrollView x:Name="GameRulesScrollView"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Fill" 
+                    HeightRequest="150"
+                    IsVisible="False"
+                    Margin="0,30,0,0"
+                    Grid.Row="8">
+                <StackLayout>
+                    <Label x:Name="GameRule1"
+                       Text="Cel Gry: Celem gry w Blackjacka jest zdobycie jak największej liczby punktów, nie przekraczając liczby 21. Wygrywa gracz, który ma więcej punktów niż croupier, bez przekraczania 21 punktów."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"/>
+                    <Label x:Name="GameRule2"
+                       Text="Talia Kart: Gra używa standardowej talii kart, składającej się z 52 kart. Każda karta ma wartość: Karty numerowe (2-10): Wartość odpowiada jej numerowi. Figury (J, Q, K): Każda figura jest warta 10 punktów. As (A): As może być wart 11 punktów. W przypadku, gdy dodanie 11 punktów przekroczy 21, As liczy się jako 1 punkt."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                    <Label x:Name="GameRule3"
+                       Text="Tura gracza: Gracz ma dwie opcje: HIT: Dobranie kolejnej karty. Po każdym doborze karty, wartość punktowa jest aktualizowana STAND: Zatrzymanie się, co kończy turę gracza i przechodzi do tury croupiera."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                    <Label x:Name="GameRule4"
+                       Text="Tura croupiera: Croupier dobiera karty, dopóki suma punktów nie osiągnie co najmniej 17. Croupier musi zawsze postępować zgodnie z tą zasadą, niezależnie od punktów gracza."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                    <Label x:Name="GameRule5" 
+                       Text="Warunki zakończenia gry: Busted: Jeżeli suma punktów gracza przekroczy 21, gracz przegrywa ('Busted! You lose!'). Croupier Busted: Jeżeli suma punktów croupiera przekroczy 21, gracz wygrywa ('Croupier busted! You win!'). Porównanie punktów: Jeżeli suma punktów gracza jest wyższa niż suma punktów croupiera i nie przekracza 21, gracz wygrywa ('You win!'). Jeżeli suma punktów croupiera jest wyższa niż suma punktów gracza i nie przekracza 21, gracz przegrywa ('You lose!'). Jeżeli suma punktów gracza i croupiera jest równa, wynik jest remisem ('It's a tie!')."
+                       FontSize="16"
+                       TextColor="Black"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                    
+                </StackLayout>
+            </ScrollView>
+            
+            <Button x:Name="QuestionMarkButton"
+             Text="?"
+             FontSize="28"
+             BackgroundColor="White"
+             TextColor="Black"
+             WidthRequest="60"
+             HeightRequest="60"
+             CornerRadius="30"
+             Clicked="OnQuestionMarkClicked"
+             HorizontalOptions="Center"
+             VerticalOptions="End"
+             Margin="0,30,0,0"
+             Grid.Row="8" />    
+
+            <Button x:Name="NextButton"
+                Text="Next"
+                Clicked="OnNextButtonClicked"
+                BackgroundColor="Orange"
+                TextColor="White"
+                WidthRequest="100"
+                HeightRequest="50"
+                IsVisible="False"
+                HorizontalOptions="Center"
+                VerticalOptions="EndAndExpand" 
+                Margin="0,20,0,0"
+                Grid.Row="9"/>
+
+            <Label x:Name="GameStatusLabel" Text="Good Luck" FontSize="26" FontAttributes="Bold" HorizontalOptions="Center" TextColor="Green" />
+        </StackLayout>
+        
+    </Grid>
+</ContentView>

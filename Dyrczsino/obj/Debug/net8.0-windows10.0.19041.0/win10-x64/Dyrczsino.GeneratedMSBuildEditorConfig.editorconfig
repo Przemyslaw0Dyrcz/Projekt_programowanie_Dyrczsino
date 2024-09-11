@@ -1,0 +1,67 @@
+is_global = true
+build_property.TargetFramework = net8.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Dyrczsino
+build_property.ProjectDir = C:\Users\Przemek\source\repos\Dyrczsino\Dyrczsino\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+
+[C:/Users/Przemek/source/repos/Dyrczsino/Dyrczsino/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Dyrczsino.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[C:/Users/Przemek/source/repos/Dyrczsino/Dyrczsino/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Dyrczsino.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/Przemek/source/repos/Dyrczsino/Dyrczsino/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Dyrczsino.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/Przemek/source/repos/Dyrczsino/Dyrczsino/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Dyrczsino.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/Przemek/source/repos/Dyrczsino/Dyrczsino/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Dyrczsino.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/Przemek/source/repos/Dyrczsino/Dyrczsino/Views/Blackjack.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Dyrczsino.Views.Blackjack.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Blackjack.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Blackjack.xaml
+
+[C:/Users/Przemek/source/repos/Dyrczsino/Dyrczsino/Views/Crash.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Dyrczsino.Views.Crash.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Crash.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Crash.xaml
+
+[C:/Users/Przemek/source/repos/Dyrczsino/Dyrczsino/Views/History.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Dyrczsino.Views.History.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\History.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\History.xaml
+
+[C:/Users/Przemek/source/repos/Dyrczsino/Dyrczsino/Views/Roulette.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Dyrczsino.Views.Roulette.xaml
+build_metadata.AdditionalFiles.TargetPath = Views\Roulette.xaml
+build_metadata.AdditionalFiles.RelativePath = Views\Roulette.xaml

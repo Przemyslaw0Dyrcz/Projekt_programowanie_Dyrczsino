@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Dyrczsino.Views"
+             x:Class="Dyrczsino.MainPage">
+
+    <ContentPage.Resources>
+        <Style x:Key="ButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="Red" />
+            <Setter Property="TextColor" Value="Gold" />
+            <Setter Property="BorderColor" Value="Black" />
+            <Setter Property="BorderWidth" Value="1" />
+            <Setter Property="Padding" Value="10,5" />
+            <Setter Property="Margin" Value="5" />
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" BackgroundColor="MediumPurple" HeightRequest="50">
+
+            <Button x:Name="ExpandButton" Text="☰" BackgroundColor="Purple" TextColor="Black" FontSize="24" Clicked="OnExpandButtonClicked"
+                    HorizontalOptions="Start" VerticalOptions="Center" Margin="10,0" />
+        </Grid>
+        <StackLayout x:Name="Sidebar" Orientation="Vertical" IsVisible="False" Spacing="10" BackgroundColor="Purple"
+                     HorizontalOptions="Start" VerticalOptions="Start" Padding="10" WidthRequest="200"
+                     Grid.Row="1" ZIndex="1">
+            <Button Text="Blackjack" Command="{Binding SelectViewCommand}" CommandParameter="Blackjack" Style="{StaticResource ButtonStyle}" />
+            <Button Text="Crash" Command="{Binding SelectViewCommand}" CommandParameter="Crash" Style="{StaticResource ButtonStyle}" />
+            <Button Text="Roulette" Command="{Binding SelectViewCommand}" CommandParameter="Roulette" Style="{StaticResource ButtonStyle}" />
+            <Button Text="History" Command="{Binding SelectViewCommand}" CommandParameter="History" Style="{StaticResource ButtonStyle}" />
+        </StackLayout>
+        <Grid Grid.Row="1" x:Name="ContentViewContainer">
+            <ContentView x:Name="ContentView">
+                <local:History />
+            </ContentView>
+        </Grid>
+    </Grid>
+</ContentPage>
+
+    

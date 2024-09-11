@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Dyrczsino.Views.Crash"
+             BackgroundColor="Black"
+             Padding="20">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Spacing="20">
+
+        <Label x:Name="StatusLabel" 
+               Text=""
+               FontSize="28" 
+               FontAttributes="Bold"
+               TextColor="Gold"
+               HorizontalOptions="Center" 
+               VerticalOptions="Start"
+               Margin="0,10,0,20"/>
+
+        <Label x:Name="MultiplierLabel" 
+               Text="x1.00" 
+               FontSize="48" 
+               TextColor="Gold" 
+               HorizontalOptions="Center"
+               Margin="0,0,0,20" />
+
+
+        <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="10" Margin="0,0,0,20">
+            <Button Text="-" Clicked="DecreaseStake_Clicked" BackgroundColor="Red" TextColor="White" WidthRequest="50" HeightRequest="50" />
+            <Label x:Name="StakeLabel" 
+                   Text="1" 
+                   FontSize="24" 
+                   TextColor="White" 
+                   HorizontalOptions="Center" VerticalOptions="Center" />
+            <Button Text="+" Clicked="IncreaseStake_Clicked" BackgroundColor="Green" TextColor="White" WidthRequest="50" HeightRequest="50" />
+        </StackLayout>
+
+
+        <Button x:Name="StartStopButton" 
+                Text="Start" 
+                Clicked="StartStopButton_Clicked" 
+                BackgroundColor="Purple" 
+                TextColor="White" 
+                FontSize="24" 
+                WidthRequest="200" HeightRequest="60"
+                Margin="0,0,0,30" />
+
+        <Button x:Name="QuestionMarkButton"
+                Text="?"
+                FontSize="28"
+                BackgroundColor="White"
+                TextColor="Black"
+                WidthRequest="60"
+                HeightRequest="60"
+                CornerRadius="30"
+                Clicked="OnQuestionMarkClicked"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Margin="0,30,0,0" />
+
+        <ScrollView x:Name="GameRulesScrollView"
+                    VerticalOptions="End" 
+                    HorizontalOptions="Fill" 
+                    HeightRequest="150"
+                    IsVisible="False"
+                    Margin="0,30,0,0">
+            <StackLayout>
+                <Label x:Name="GameRule1"
+                       Text="Press the 'Start' button at the bottom of the screen to begin the game. The multiplier will start increasing, and you need to monitor its growth."
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"/>
+                <Label x:Name="GameRule2"
+                       Text="Multiplier Increase: The multiplier starts at 1.00 and increases every 0.25 seconds. The rate of increase grows over time, meaning the longer you wait, the larger the multiplier increase will be."
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                <Label x:Name="GameRule3"
+                       Text="Stopping the Game: You can stop the game at any time by pressing the 'Stop' button. If you stop the game before a 'crash', you win, and your winnings will be equal to the stake multiplied by the current multiplier."
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                <Label x:Name="GameRule4"
+                       Text="Game 'Crash': If the multiplier reaches a random value before you stop the game, the game will 'crash', and you will lose your stake."
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                <Label x:Name="GameRule5"
+                       Text="Changing Stake: You can increase or decrease your stake by pressing the 'Plus' or 'Minus' buttons before starting the game."
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+                <Label x:Name="GameRule6"
+                       Text="Results: After the game ends (either by stopping or by a 'crash'), a message will appear on the screen indicating whether you won or lost."
+                       FontSize="16"
+                       TextColor="White"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Start"
+                       Padding="10"
+                       IsVisible="False"/>
+            </StackLayout>
+        </ScrollView>
+
+
+        <Button x:Name="NextButton"
+                Text="Next"
+                Clicked="OnNextButtonClicked"
+                BackgroundColor="Orange"
+                TextColor="White"
+                WidthRequest="100"
+                HeightRequest="50"
+                IsVisible="False"
+                HorizontalOptions="Center"
+                VerticalOptions="End"
+                Margin="0,20,0,0"/>
+    </StackLayout>
+</ContentView>
